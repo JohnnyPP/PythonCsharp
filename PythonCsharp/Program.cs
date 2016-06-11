@@ -16,11 +16,8 @@ namespace PythonCsharp
             string python = @"C:\Python27\python.exe";
 
             // python app to call 
-            string myPythonApp = @"C:\Users\Kolan\Documents\Python\sum.py";
-
-            // dummy parameters to send Python script 
-            int x = 2;
-            int y = 5;
+            //string myPythonApp = @"C:\Users\Kolan\Documents\Python\sum.py";
+            string myPythonApp = @"C:\Users\Kolan\Documents\Git\Panda\160605Panda.py";
 
             // Create new process start info 
             ProcessStartInfo myProcessStartInfo = new ProcessStartInfo(python);
@@ -29,16 +26,15 @@ namespace PythonCsharp
             myProcessStartInfo.UseShellExecute = false;
             myProcessStartInfo.RedirectStandardOutput = true;
 
-            // start python app with 3 arguments  
+            // start python app with 1 argument  
             // 1st arguments is pointer to itself,  
-            // 2nd and 3rd are actual arguments we want to send 
-            myProcessStartInfo.Arguments = myPythonApp + " " + x + " " + y;
+            myProcessStartInfo.Arguments = myPythonApp;
 
             Process myProcess = new Process();
             // assign start information to the process 
             myProcess.StartInfo = myProcessStartInfo;
 
-            Console.WriteLine("Calling Python script with arguments {0} and {1}", x, y);
+            Console.WriteLine("Calling Python script");
             // start the process 
             myProcess.Start();
 
@@ -56,7 +52,7 @@ namespace PythonCsharp
             myProcess.Close();
 
             // write the output we got from python app 
-            Console.WriteLine("Value received from script: " + myString);
+            Console.WriteLine("Values received from script: " + myString);
             Console.ReadKey();
         }
     }
