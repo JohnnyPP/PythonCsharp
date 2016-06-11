@@ -16,7 +16,7 @@ namespace PythonCsharp
             string python = @"C:\Python27\python.exe";
 
             // python app to call 
-            string myPythonApp = @"C:\Users\Kolan\Documents\sum.py";
+            string myPythonApp = @"C:\Users\Kolan\Documents\Python\sum.py";
 
             // dummy parameters to send Python script 
             int x = 2;
